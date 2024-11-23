@@ -17,6 +17,7 @@ Default: 1
 Small: 1.05
 Medium: 1.2
 Paragraph default: 1.6
+Large: 1.8
 
 - Letter spacing
 - -0.5px
@@ -65,12 +66,17 @@ Medium: 11px
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Rubik", sans-serif;
   line-height: 1;
   font-weight: 400;
+
+  /* Only works  if there is nothing absolutely 
+     positioned in relation to the body */
+  overflow-x: hidden;
 }
 
 /************************************/
