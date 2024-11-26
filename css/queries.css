@@ -217,7 +217,11 @@
   .btn:link,
   .btn:visited {
     padding: 2.4rem 1.6rem;
-    /* font-size: 1.8rem; */
+    font-size: 1.8rem;
+  }
+
+  .delivered-text {
+    font-size: 1.6rem;
   }
 
   .section-hero {
@@ -256,5 +260,18 @@
   .gallery {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.2rem;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+  }
+
+  .cta-img-box {
+    height: 32rem;
+    grid-row: 1;
   }
 }
