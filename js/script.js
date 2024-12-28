@@ -1,5 +1,3 @@
-console.log("hello world rawi");
-
 const myName = "Rawi Daniel";
 
 // const h1 = document.querySelector(".heading-primary");
@@ -49,6 +47,31 @@ allLinks.forEach((link) => {
   });
 });
 
+//////////////////////////////////////////////////////////
+// Sticky navigation
+
+const sectionHeroEl = document.querySelector(".section-hero");
+const body = document.body;
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    const ent = entries[0];
+    if (!ent.isIntersecting) {
+      body.classList.add("sticky");
+    }
+
+    if (ent.isIntersecting && body.classList.contains("sticky")) {
+      body.classList.remove("sticky");
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+observer.observe(sectionHeroEl);
+
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
@@ -63,7 +86,6 @@ function checkFlexGap() {
   document.body.appendChild(flex);
   var isSupported = flex.scrollHeight === 1;
   flex.parentNode.removeChild(flex);
-  console.log(isSupported);
 
   if (!isSupported) document.body.classList.add("no-flexbox-gap");
 }
